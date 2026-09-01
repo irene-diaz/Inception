@@ -56,6 +56,11 @@ volumes:
 
   wordpress_data:
     name: srcs_wordpress_data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/idiaz-ca/data/wordpress
 
 networks:
   inception:
