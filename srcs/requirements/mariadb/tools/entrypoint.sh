@@ -9,8 +9,8 @@ echo "Initializing MariaDB..."
 ```
 mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 
-ROOT_PASSWORD=$(cat /run/secrets/db_root_password.txt)
-DB_PASSWORD=$(cat /run/secrets/db_password.txt)
+ROOT_PASSWORD=$(cat /run/secrets/db_root_password)
+DB_PASSWORD=$(cat /run/secrets/db_password)
 
 mariadbd --user=mysql --bootstrap <<-EOSQL
     ALTER USER 'root'@'localhost' IDENTIFIED BY '${ROOT_PASSWORD}';
